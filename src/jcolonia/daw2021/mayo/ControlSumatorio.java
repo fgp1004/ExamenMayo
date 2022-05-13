@@ -59,12 +59,12 @@ public class ControlSumatorio {
 			case 2: // Opción 2: Mostrar sumandos
 				mostrarSumandos();
 				break;
-//			case 3: // Opción 3: Mostrar suma
-//				mostrarSuma();
-//				break;
-//			case 4: // Opción 4: Reset
-//				restablecer();
-//				break;
+			case 3: // Opción 3: Mostrar suma
+				mostrarSuma();
+				break;
+			case 4: // Opción 4: Reset
+				restablecer();
+				break;
 			default: // Opción no esperada: abortar
 				ejecutarGenérico(opciónElegida);
 				System.err.println("Error interno de programa - operación pendiente de desarrollo");
@@ -73,7 +73,7 @@ public class ControlSumatorio {
 		} while (!fin);
 	}
 
-	
+
 
 	private void cargarSumando() throws SumatorioNumberException {
 		VistaAgregar añadir=new VistaAgregar("Introduzca un nuevo valor",entrada);
@@ -84,16 +84,33 @@ public class ControlSumatorio {
 		conjunto.add(numeroAñadido);
 	}
 	
+	
+	
 	private void mostrarSumandos() {
-		VistaConjunto listarNumeros=new VistaConjunto("Texto orientativo", entrada);
-		listarNumeros.mostrarListado(conjunto);
+		VistaConjunto listaSumandos=new VistaConjunto("Texto orientativo", entrada);
+		listaSumandos.mostrarListado(conjunto);
 	}
-
+	
+	
+	
+	private void mostrarSuma() {
+		VistaSuma sumatorio=new VistaSuma("", entrada);
+		sumatorio.obtenerResuladoSuma(conjunto);
+	}
+	
+	
+	private void restablecer() {
+		conjunto = new ListaNúmeros();
+	}
+	
+	
 	private void ejecutarGenérico(int id) {
 		String mensaje;
 		mensaje = String.format("%n  Ha elegido la opción %d: «%s»", id, OPCIONES_MENÚ_PRINCIPAL[id - 1]);
 		Vista.mostrarTexto(mensaje);
 	}
+	
+	
 
 	public static void main(String[] args) throws SumatorioNumberException {
 		Scanner entrada = new Scanner(System.in);
