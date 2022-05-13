@@ -2,13 +2,32 @@ package jcolonia.daw2021.mayo;
 
 import java.util.Scanner;
 
+
+/**
+ * Clase VistaAgregar.
+ * @author Fernando Gómez
+ * @since java 11
+ * @version 1.2
+ */
 public class VistaAgregar extends Vista {
 
+	/**
+	 * Constructor de la clase 
+	 *
+	 * @param título texto a mostrar al elegir la opción
+	 * @param scEntrada datos por parametro del usuario
+	 */
 	public VistaAgregar(String título, Scanner scEntrada) {
 		super(título, scEntrada);		
 	}
 
-	public double agregarValores(Double valoresLista) {
+	/**
+	 * Agrega un valor a la lista
+	 *
+	 * @param valoresLista the valores lista
+	 * @return the double
+	 */
+	public double agregarValor(Double valoresLista) {
 		String líneaTexto="";
 		double líneaNumeroGrande=0.0;
 		boolean seguir=true;

@@ -74,36 +74,50 @@ public class ControlSumatorio {
 	}
 
 
-
+	/**
+	 * Añade valores tipo double a la lista 
+	 * 
+	 * @throws SumatorioNumberException
+	 */
 	private void cargarSumando() throws SumatorioNumberException {
 		VistaAgregar añadir=new VistaAgregar("Introduzca un nuevo valor",entrada);
 		double numeroAñadir=0.0;
 		double numeroAñadido;			
 		
-		numeroAñadido=añadir.agregarValores(numeroAñadir);
+		numeroAñadido=añadir.agregarValor(numeroAñadir);
 		conjunto.add(numeroAñadido);
 	}
 	
 	
-	
+	/**
+	 * Muestra la lista con los valores
+	 */
 	private void mostrarSumandos() {
 		VistaConjunto listaSumandos=new VistaConjunto("Texto orientativo", entrada);
 		listaSumandos.mostrarListado(conjunto);
 	}
 	
 	
-	
+	/**
+	 * Muestra de manera ordenada el contenido de la lista y el resultado final
+	 */
 	private void mostrarSuma() {
 		VistaSuma sumatorio=new VistaSuma("", entrada);
 		sumatorio.obtenerResuladoSuma(conjunto);
 	}
 	
-	
+	/**
+	 * Inicializa la lista para eliminar el contenido de antes
+	 */
 	private void restablecer() {
 		conjunto = new ListaNúmeros();
 	}
 	
-	
+	/**
+	 * Muestra un texto indicando la opción elegida por el usuario
+	 * 
+	 * @param id
+	 */
 	private void ejecutarGenérico(int id) {
 		String mensaje;
 		mensaje = String.format("%n  Ha elegido la opción %d: «%s»", id, OPCIONES_MENÚ_PRINCIPAL[id - 1]);
@@ -111,7 +125,12 @@ public class ControlSumatorio {
 	}
 	
 	
-
+	/**
+	 * Método main 
+	 * 
+	 * @param args
+	 * @throws SumatorioNumberException
+	 */
 	public static void main(String[] args) throws SumatorioNumberException {
 		Scanner entrada = new Scanner(System.in);
 
