@@ -37,7 +37,7 @@ public class ControlSumatorio {
 		conjunto = new ListaNúmeros();
 	}
 
-	private void buclePrincipal() {
+	private void buclePrincipal() throws SumatorioNumberException {
 		int opciónElegida;
 		boolean fin = false;
 
@@ -53,12 +53,12 @@ public class ControlSumatorio {
 				fin = true;
 				Vista.mostrarAviso("¡¡¡A-D-I-O-S!!");
 				break;
-//			case 1: // Opción 1: Entrada datos
-//				cargarSumando();
-//				break;
-//			case 2: // Opción 2: Mostrar sumandos
-//				mostrarSumandos();
-//				break;
+			case 1: // Opción 1: Entrada datos
+				cargarSumando();
+				break;
+			case 2: // Opción 2: Mostrar sumandos
+				mostrarSumandos();
+				break;
 //			case 3: // Opción 3: Mostrar suma
 //				mostrarSuma();
 //				break;
@@ -73,13 +73,25 @@ public class ControlSumatorio {
 		} while (!fin);
 	}
 
+	private void mostrarSumandos() {
+		
+	}
+
+	private void cargarSumando() throws SumatorioNumberException {
+		VistaAgregar añadir=new VistaAgregar("Introduzca un nuevo valor",entrada);
+		double numeroAñadir=0.0;	
+		
+		añadir.agregarValores(numeroAñadir);
+		conjunto.add(numeroAñadir);
+	}
+
 	private void ejecutarGenérico(int id) {
 		String mensaje;
 		mensaje = String.format("%n  Ha elegido la opción %d: «%s»", id, OPCIONES_MENÚ_PRINCIPAL[id - 1]);
 		Vista.mostrarTexto(mensaje);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SumatorioNumberException {
 		Scanner entrada = new Scanner(System.in);
 
 		ControlSumatorio control = new ControlSumatorio(entrada);
