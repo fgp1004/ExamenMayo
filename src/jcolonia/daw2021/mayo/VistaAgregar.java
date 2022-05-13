@@ -8,7 +8,7 @@ public class VistaAgregar extends Vista {
 		super(título, scEntrada);		
 	}
 
-	public void agregarValores(Double valoresLista) {
+	public double agregarValores(Double valoresLista) {
 		String líneaTexto="";
 		double líneaNumeroGrande=0.0;
 		boolean seguir=true;
@@ -21,7 +21,6 @@ public class VistaAgregar extends Vista {
 					System.out.println("Campo vacío");
 				}else {	
 					líneaNumeroGrande = Double.parseDouble(líneaTexto);
-					valoresLista=líneaNumeroGrande;
 					seguir=false;
 					System.out.println("\t→Se ha agregado un nuevo valor");
 				}
@@ -30,6 +29,7 @@ public class VistaAgregar extends Vista {
 			}
 			
 		}
+		return líneaNumeroGrande;
 	}
 	
 }

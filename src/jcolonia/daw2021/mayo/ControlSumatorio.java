@@ -73,16 +73,20 @@ public class ControlSumatorio {
 		} while (!fin);
 	}
 
-	private void mostrarSumandos() {
-		
-	}
+	
 
 	private void cargarSumando() throws SumatorioNumberException {
 		VistaAgregar añadir=new VistaAgregar("Introduzca un nuevo valor",entrada);
-		double numeroAñadir=0.0;	
+		double numeroAñadir=0.0;
+		double numeroAñadido;			
 		
-		añadir.agregarValores(numeroAñadir);
-		conjunto.add(numeroAñadir);
+		numeroAñadido=añadir.agregarValores(numeroAñadir);
+		conjunto.add(numeroAñadido);
+	}
+	
+	private void mostrarSumandos() {
+		VistaConjunto listarNumeros=new VistaConjunto("Texto orientativo", entrada);
+		listarNumeros.mostrarListado(conjunto);
 	}
 
 	private void ejecutarGenérico(int id) {
