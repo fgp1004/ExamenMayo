@@ -14,12 +14,10 @@ public class VistaMenúBásico extends Vista{
 	}
 
 	public void mostrarOpciones() {
-		out.println("----------------------------------------");
 		for (int i = 0; i < opcionesMenúPrincipal.length; i++) {
-			out.printf("Opcion %d .- %s\n", i + 1, opcionesMenúPrincipal[i]);
-
+			out.printf("%d) %s\n", i + 1, opcionesMenúPrincipal[i]);
 		}
-		out.println("----------------------------------------\n");
+		
 	}
 
 	public int pedirOpción() {
