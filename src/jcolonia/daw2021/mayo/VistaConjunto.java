@@ -9,10 +9,11 @@ public class VistaConjunto extends Vista{
 	}
 
 	public void mostrarListado(ListaNúmeros conjunto) {
-		
+		String valorATexto="";
 		
 		for(int i =0;i<conjunto.getNúmSumandos();i++) {
-			System.out.printf("%3.d → %f\n",i+1,conjunto.toListaString().get(i) );
+			valorATexto=String.format("%s",conjunto.toListaString().get(i));
+			System.out.printf("%d → %s\n",i+1,valorATexto);
 		}
 	}
 	
