@@ -9,6 +9,9 @@ import java.util.Scanner;
  * @since java 11
  * @version 1.2
  */
+
+/*Otro comentario para GitHub de otra clase*/
+
 public class VistaSuma extends Vista{
 
 	/**

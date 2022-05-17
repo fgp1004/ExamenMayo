@@ -76,6 +76,7 @@ public class ControlSumatorio {
 		} while (!fin);
 	}
 
+	/*Estoes otro ejemplo para Github*/
 
 	/**
 	 * AÃ±ade valores tipo double a la lista 
